@@ -1,12 +1,54 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Hello world!</title>
-    </head>
-    <body>
-        <p>Hello world!</p>
-        <input type="button" value="ボタン" onclick="helloWorld()">
-        <script type="text/javascript" src="index.js"></script>
-    </body>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カフェイン記録アプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>カフェイン記録アプリ</h1>
+
+  <!-- ユーザー認証フォーム -->
+  <form id="loginForm">
+    <label for="username">ユーザー名:</label>
+    <input type="text" id="username" required>
+    <button type="submit">ログイン</button>
+  </form>
+
+  <!-- ドリンクの記録フォーム -->
+  <form id="drinkForm" style="display: none;">
+    <label for="drinkSelect">ドリンクを選択:</label>
+    <select id="drinkSelect">
+      <option value="" selected disabled>ドリンクを選んでください</option>
+      <option value="コーヒー" data-caffeine="95">コーヒー (95mg)</option>
+      <option value="エナジードリンク" data-caffeine="80">エナジードリンク (80mg)</option>
+      <option value="紅茶" data-caffeine="50">紅茶 (50mg)</option>
+      <option value="緑茶" data-caffeine="30">緑茶 (30mg)</option>
+    </select>
+    <label for="caffeineAmount">カフェイン量 (mg):</label>
+    <input type="number" id="caffeineAmount" readonly>
+    <button type="submit">記録を追加</button>
+  </form>
+
+  <!-- 新しいドリンク登録フォーム -->
+  <form id="addDrinkForm" style="display: none;">
+    <h2>新しいドリンクを登録</h2>
+    <label for="newDrinkName">ドリンク名:</label>
+    <input type="text" id="newDrinkName" required>
+    <label for="newCaffeineAmount">カフェイン量 (mg):</label>
+    <input type="number" id="newCaffeineAmount" required>
+    <button type="submit">ドリンクを追加</button>
+  </form>
+
+  <!-- 記録リスト -->
+  <h2 id="welcomeMessage" style="display: none;">ようこそ！</h2>
+  <ul id="drinkList"></ul>
+
+  <!-- 現在のカフェインレベル -->
+  <h2>現在のカフェインレベル</h2>
+  <p id="caffeineLevel">---</p>
+  
+  <script src="script.js" defer></script>
+</body>
 </html>
