@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ユーザー管理 - 登録と削除</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ユーザー管理</h1>
+
+  <!-- ユーザー登録フォーム -->
+  <form id="registerForm">
+    <label for="newUsername">新しいユーザー名:</label>
+    <input type="text" id="newUsername" required>
+    <button type="submit">登録</button>
+  </form>
+
+  <!-- ユーザー削除フォーム -->
+  <form id="deleteUserForm">
+    <h2>ユーザーを削除</h2>
+    <label for="deleteUsername">削除するユーザー名:</label>
+    <input type="text" id="deleteUsername" required>
+    <button type="submit">削除</button>
+  </form>
+
+  <!-- ログインページへの戻りリンク -->
+  <p><a href="index.html">ログインページへ戻る</a></p>
+
+  <script src="register.js" defer></script>
+</body>
+</html>

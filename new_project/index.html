@@ -3,31 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>カフェイン記録アプリ</title>
+  <title>カフェイン記録アプリ - ログイン</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>カフェイン記録アプリ</h1>
+  <h1>CAFFEINE COUNTER</h1>
+  <p id="caffeineLevel">現在のカフェインレベル: --- mg</p>
 
-  <!-- ユーザー認証フォーム -->
+  <!-- ログインフォーム -->
   <form id="loginForm">
     <label for="username">ユーザー名:</label>
     <input type="text" id="username" required>
     <button type="submit">ログイン</button>
   </form>
 
-  <!-- ドリンクの記録フォーム -->
+  <!-- ユーザー登録ページへのリンク -->
+  <p>新しいユーザーですか？ <a href="register.html">こちらから登録</a></p>
+
+  <!-- ドリンク記録フォーム -->
   <form id="drinkForm" style="display: none;">
     <label for="drinkSelect">ドリンクを選択:</label>
     <select id="drinkSelect">
       <option value="" selected disabled>ドリンクを選んでください</option>
-      <option value="コーヒー" data-caffeine="95">コーヒー (95mg)</option>
-      <option value="エナジードリンク" data-caffeine="80">エナジードリンク (80mg)</option>
-      <option value="紅茶" data-caffeine="50">紅茶 (50mg)</option>
-      <option value="緑茶" data-caffeine="30">緑茶 (30mg)</option>
     </select>
-    <label for="caffeineAmount">カフェイン量 (mg):</label>
-    <input type="number" id="caffeineAmount" readonly>
     <button type="submit">記録を追加</button>
   </form>
 
@@ -41,14 +39,23 @@
     <button type="submit">ドリンクを追加</button>
   </form>
 
+  <!-- 登録済みドリンク削除フォーム -->
+  <form id="deleteDrinkForm" style="display: none;">
+    <h2>登録済みドリンクを削除</h2>
+    <label for="deleteDrinkSelect">削除するドリンク:</label>
+    <select id="deleteDrinkSelect">
+      <option value="" selected disabled>ドリンクを選んでください</option>
+    </select>
+    <button type="submit">削除</button>
+  </form>
+
+  <!-- ログアウトボタン -->
+  <button id="logoutButton" style="display: none;">ログアウト</button>
+
   <!-- 記録リスト -->
-  <h2 id="welcomeMessage" style="display: none;">ようこそ！</h2>
+  <h2>記録一覧</h2>
   <ul id="drinkList"></ul>
 
-  <!-- 現在のカフェインレベル -->
-  <h2>現在のカフェインレベル</h2>
-  <p id="caffeineLevel">---</p>
-  
   <script src="script.js" defer></script>
 </body>
 </html>
